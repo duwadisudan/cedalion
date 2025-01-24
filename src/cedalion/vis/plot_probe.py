@@ -19,6 +19,9 @@ from matplotlib.backends.backend_qtagg import NavigationToolbar2QT as Navigation
 from matplotlib.backends.qt_compat import QtWidgets
 from matplotlib.figure import Figure
 
+from PySide6.QtGui import QAction
+
+
 import cedalion
 import cedalion.typing as cdt
 
@@ -186,7 +189,7 @@ class _MAIN_GUI(QtWidgets.QMainWindow):
         # control_panel_layout.addWidget(ref_point,stretch=1)
 
         # Create button action for opening file
-        open_btn = QtWidgets.QAction("Open...", self)
+        open_btn = QAction("Open...", self)
         open_btn.setStatusTip("Open SNIRF file")
         open_btn.triggered.connect(self._open_dialog)
 
